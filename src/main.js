@@ -9,18 +9,18 @@ import ratesElt from './components/rates.js';
 
 function renderUI() {
 
-  const baseCurrency = getDefaultCurrency();
-  getRates(baseCurrency).then( data => {
+  const base = getDefaultCurrency();
+  getRates(base).then(({rates, date}) => {
 
-    const currencies = Object.keys(data.rates).sort();
+    const currencies = Object.keys(rates).sort();
 
-    ReactDOM.render(ratesHeaderElt({ base: baseCurrency, date: data.date }),
+    ReactDOM.render(ratesHeaderElt({base, date}),
       document.getElementById('ratesHeader'));
-    ReactDOM.render(currencyListElt({ base: baseCurrency, currencies, handleChange: (c) => {
+    ReactDOM.render(currencyListElt({base, currencies, handleChange: (c) => {
         setDefaultCurrency(c);
         renderUI();
       }}), document.getElementById('currencyList'));
-    ReactDOM.render(ratesElt({currencies, rates: data.rates}), document.getElementById('rates'));
+    ReactDOM.render(ratesElt({currencies, rates}), document.getElementById('rates'));
   });
 
 }
