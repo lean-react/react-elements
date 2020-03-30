@@ -13,13 +13,6 @@ global.axios = { get: (url) => Promise.resolve({ data: {
   }
 } }) };
 
-it('getCurrencies returns all currencies including EUR', () => {
-  getCurrencies().then(currencies => {
-    expect(currencies.length).toBe(6);
-    expect(currencies.includes('EUR')).toBeTruthy();
-  });
-});
-
 it('getRates returns all exchange rates including EUR', () => {
   getRates('EUR').then( data => {
     expect(Object.keys(data.rates).length).toBe(6);
