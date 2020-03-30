@@ -1,2 +1,3 @@
-# react-elements
-React Training: Introducing react elements.
+# React Elements
+
+> React Training: Introducing react elements.
