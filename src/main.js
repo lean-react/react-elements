@@ -28,7 +28,13 @@ function renderUI() {
           classNames += ' bg-white hover:bg-gray-100';
         }
         return React.createElement('li', { key: c },
-          React.createElement('button', { className: classNames }, c));
+          React.createElement('button', {
+            className: classNames,
+            onClick: () => {
+              setDefaultCurrency(c);
+              renderUI();
+            }
+          }, c));
       })
     );
 
@@ -47,10 +53,3 @@ function renderUI() {
 }
 
 renderUI();
-
-document.getElementById('currencyList').addEventListener('click', ev => {
-  if (ev.target.matches('button')) {
-    setDefaultCurrency(ev.target.textContent);
-    renderUI();
-  }
-});
