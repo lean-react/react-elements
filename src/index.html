@@ -14,16 +14,66 @@
   <h1 class="text-2xl font-semibold">Wechselkurse</h1>
 </header>
 
-<main class="container mx-auto mt-4">
-  <h2 class="text-3xl border-b border-gray-800">
+<main class="container mx-auto mt-4 px-4">
+  <h2 class="text-3xl pb-2 border-b border-gray-800">
     Aktuelle Kurse des EUR <small class="ml-4">(Stand vom 29.03.2020)</small>
   </h2>
   <div class="flex mt-4">
-    <div class="flex-initial pr-2 border-r border-gray-500">
-      <h3 class="text-2xl">Basis-Währung</h3>
+    <div class="flex-initial pr-8 border-r border-gray-500 h-full">
+      <h3 class="text-2xl mb-4">Basis-Währung</h3>
+      <ul class="w-24 text-blue-700 text-center mx-auto border-b border-blue-200">
+        <li>
+          <button class="bg-white hover:bg-gray-100 w-24 py-2 border border-blue-200 border-b-0">CHF</button>
+        </li>
+        <li>
+          <button class="bg-white hover:bg-gray-100 w-24 py-2 border border-blue-200 border-b-0">CNY</button>
+        </li>
+        <li>
+          <button class="bg-blue-500 text-white w-24 py-2 border border-blue-200 border-b-0">EUR</button>
+        </li>
+        <li>
+          <button class="bg-white hover:bg-gray-100 w-24 py-2 border border-blue-200 border-b-0">GBP</button>
+        </li>
+        <li>
+          <button class="bg-white hover:bg-gray-100 w-24 py-2 border border-blue-200 border-b-0">RUB</button>
+        </li>
+        <li>
+          <button class="bg-white hover:bg-gray-100 w-24 py-2 border border-blue-200 border-b-0">USD</button>
+        </li>
+      </ul>
     </div>
-    <div class="flex-auto pl-2">
-      <h3 class="text-2xl text-center">Aktuelle Wechselkurse</h3>
+    <div class="flex-auto px-8">
+      <h3 class="text-2xl text-center mb-4">Aktuelle Wechselkurse</h3>
+      <table class="w-40 mx-auto">
+        <thead>
+        <tr>
+          <th class="text-left">Währung</th>
+          <th class="text-right">Kurs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>CHF</td>
+          <td class="text-right">1.0571</td>
+        </tr>
+        <tr>
+          <td>CNY</td>
+          <td class="text-right">7.8337</td>
+        </tr>
+        <tr>
+          <td>GBP</td>
+          <td class="text-right">0.8890</td>
+        </tr>
+        <tr>
+          <td>RUB</td>
+          <td class="text-right">88.1385</td>
+        </tr>
+        <tr>
+          <td>USD</td>
+          <td class="text-right">1.1034</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </main>
