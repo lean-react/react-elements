@@ -2,6 +2,22 @@
 
 > React Training: Introducing react elements.
 
-Um das Beispiel zu starten den ```src```-Ordner über einen Development-Server hosten. Zum Beispiel:
+## NPM Scripts
 
-    npx lite-server --baseDir=src
+* Start a development server with live reloading
+
+      npm start
+
+* Build production code in ```dist``` folder
+
+      npm build
+
+* Build development code in ```dist``` folder
+
+      npm build:dev
+
+* Run unit tests
+
+      npm test
+
+

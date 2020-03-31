@@ -1,6 +1,9 @@
 {
   "private": true,
   "scripts": {
+    "start": "webpack-dev-server",
+    "build:dev": "webpack",
+    "build": "webpack --mode=production",
     "test": "jest"
   },
   "dependencies": {
