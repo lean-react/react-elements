@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 const baseUrl = 'https://api.exchangeratesapi.io/latest';
 

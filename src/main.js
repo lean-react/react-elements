@@ -1,5 +1,7 @@
 // Main Entry Point
 
+import ReactDOM from 'react-dom';
+
 import {getDefaultCurrency, setDefaultCurrency} from './util/default-currency.js';
 import {getRates} from './util/rates-api.js';
 

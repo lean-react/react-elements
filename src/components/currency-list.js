@@ -1,3 +1,4 @@
+import React from 'react';
 
 const currencyListElt = ({base, currencies, handleChange}) => React.createElement(
   'ul',

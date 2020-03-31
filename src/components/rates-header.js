@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ratesHeaderElt = ({base, date}) => {
   const dateFormatted = new Date(date).toLocaleDateString('de-DE');
   return React.createElement(
