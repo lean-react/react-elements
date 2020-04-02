@@ -2,6 +2,8 @@
 
 import ReactDOM from 'react-dom';
 
+import './styles.css';
+
 import {getDefaultCurrency, setDefaultCurrency} from './util/default-currency.js';
 import {getRates} from './util/rates-api.js';
 
