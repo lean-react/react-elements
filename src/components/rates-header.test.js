@@ -16,7 +16,7 @@ afterEach(() => {
   container = null;
 });
 
-it("renders base currency and german formatted date", () => {
+test("renders base currency and german formatted date", () => {
   const base = 'CHF';
   const date = '2020-03-31';
   act(() => {

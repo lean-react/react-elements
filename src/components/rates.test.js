@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import ratesElt from './rates';
 
-it('displays a row for each currency', () =>{
+test('displays a row for each currency', () =>{
 
   const rates = {
     CHF: 0.9674491106,

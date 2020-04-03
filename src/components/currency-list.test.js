@@ -21,7 +21,7 @@ afterEach(() => {
   container = null;
 });
 
-it('renders a button for each currency', () => {
+test('renders a button for each currency', () => {
   const handleChange = () => {};
 
   act(() => {
@@ -34,7 +34,7 @@ it('renders a button for each currency', () => {
   });
 });
 
-it('handles click on one of the buttons', () => {
+test('handles click on one of the buttons', () => {
   const handleChange = jest.fn();
 
   act(() => {

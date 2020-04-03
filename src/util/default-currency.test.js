@@ -4,12 +4,12 @@ beforeEach(() => {
   localStorage.clear();
 });
 
-it('getDefaultCurrency returns initially "EUR"', () => {
+test('getDefaultCurrency returns initially "EUR"', () => {
   const currency = getDefaultCurrency();
   expect(currency).toBe('EUR');
 });
 
-it('setDefaultCurrency stores currency', () => {
+test('setDefaultCurrency stores currency', () => {
   const expected = 'CHF';
   setDefaultCurrency(expected);
   const currency = getDefaultCurrency();

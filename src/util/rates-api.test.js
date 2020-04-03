@@ -37,7 +37,7 @@ axiosMock.get
   .mockResolvedValueOnce(eurQuery)
   .mockResolvedValueOnce(usdQuery);
 
-it('getRates returns all exchange rates including EUR', () => {
+test('getRates returns all exchange rates including EUR', () => {
   getRates('EUR').then(data => {
     expect(Object.keys(data.rates).length).toBe(6);
   });
@@ -45,3 +45,4 @@ it('getRates returns all exchange rates including EUR', () => {
     expect(Object.keys(data.rates).length).toBe(6);
   });
 });
+
