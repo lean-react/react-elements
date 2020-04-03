@@ -24,7 +24,7 @@ function renderUI() {
         setDefaultCurrency(c);
         renderUI();
       }}), document.getElementById('currencyList'));
-    ReactDOM.render(ratesElt({currencies, rates}), document.getElementById('rates'));
+    ReactDOM.render(ratesElt({rates}), document.getElementById('rates'));
   });
 
 }
