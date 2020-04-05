@@ -24,5 +24,9 @@ test("renders base currency and german formatted date", () => {
   });
 
   expect(container.textContent).toContain('CHF');
-  expect(container.textContent).toContain('31.03.2020');
+  if (process.platform === 'win32' && process.version < 'v13') {
+    expect(container.textContent).toMatch(/2020-03-31/);
+  } else {
+    expect(container.textContent).toMatch(/31\.03\.2020/);
+  }
 });
