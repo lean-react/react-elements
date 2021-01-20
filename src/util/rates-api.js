@@ -12,7 +12,6 @@ export async function getRates(baseCurrency) {
     }
     return { date, rates };
   } catch (e) {
-    console.log(e);
     throw Error('Problem fetching data from https://exchangeratesapi.io');
   }
 }
