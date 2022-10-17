@@ -1,11 +1,15 @@
 // Main Entry Point
 
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import './styles.css';
 
 import {getDefaultCurrency, setDefaultCurrency} from './util/default-currency.js';
 import {getRates} from './util/rates-api.js';
+
+const headerNode = document.getElementById('ratesHeader');
+const currenciesNode = document.getElementById('currencyList');
+const ratesNode = document.getElementById('rates');
 
 import ratesHeaderElt from './components/rates-header.js';
 import currencyListElt from './components/currency-list.js';
@@ -18,13 +22,12 @@ function renderUI() {
 
     const currencies = Object.keys(rates).sort();
 
-    ReactDOM.render(ratesHeaderElt({base, date}),
-      document.getElementById('ratesHeader'));
-    ReactDOM.render(currencyListElt({base, currencies, handleChange: (c) => {
+    createRoot(headerNode).render(ratesHeaderElt({base, date}));
+    createRoot(currenciesNode).render(currencyListElt({base, currencies, handleChange: (c) => {
         setDefaultCurrency(c);
         renderUI();
-      }}), document.getElementById('currencyList'));
-    ReactDOM.render(ratesElt({rates}), document.getElementById('rates'));
+      }}));
+    createRoot(ratesNode).render(ratesElt({rates}));
   });
 
 }
