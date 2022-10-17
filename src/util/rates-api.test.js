@@ -1,5 +1,6 @@
 import axiosMock from 'axios';
-jest.mock('axios');
+import { vi } from 'vitest';
+vi.mock('axios');
 
 import {getRates} from './rates-api';
 

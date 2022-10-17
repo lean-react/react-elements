@@ -1,4 +1,4 @@
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import currencyListElt from "./currency-list";
 
@@ -7,16 +7,19 @@ const currencies = [
   'CHF', 'CNY', 'EUR', 'GBP', 'RUB', 'USD'
 ];
 
+let root = null;
 let container = null;
+
 beforeEach(() => {
   // setup a DOM element as a render target
   container = document.createElement("div");
   document.body.appendChild(container);
+  root = createRoot(container);
 });
 
 afterEach(() => {
   // cleanup on exiting
-  unmountComponentAtNode(container);
+  root.unmount();
   container.remove();
   container = null;
 });
@@ -25,7 +28,7 @@ test('renders a button for each currency', () => {
   const handleChange = () => {};
 
   act(() => {
-    render(currencyListElt({base, currencies, handleChange}), container);
+    root.render(currencyListElt({base, currencies, handleChange}));
   });
   const buttons = container.querySelectorAll('button');
   expect(buttons.length).toBe(currencies.length);
@@ -35,10 +38,10 @@ test('renders a button for each currency', () => {
 });
 
 test('handles click on one of the buttons', () => {
-  const handleChange = jest.fn();
+  const handleChange = vi.fn();
 
   act(() => {
-    render(currencyListElt({base, currencies, handleChange}), container);
+    root.render(currencyListElt({base, currencies, handleChange}));
   });
   const buttons = container.querySelectorAll('button');
   buttons.forEach(btn => { btn.dispatchEvent(new MouseEvent("click", { bubbles: true })); });
