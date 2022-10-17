@@ -11,9 +11,9 @@ const headerNode = document.getElementById('ratesHeader');
 const currenciesNode = document.getElementById('currencyList');
 const ratesNode = document.getElementById('rates');
 
-import ratesHeaderElt from './components/rates-header.js';
-import currencyListElt from './components/currency-list.js';
-import ratesElt from './components/rates.js';
+import RatesHeaderElt from './components/rates-header.js';
+import CurrencyListElt from './components/currency-list.js';
+import RatesElt from './components/rates.js';
 
 function renderUI() {
 
@@ -22,12 +22,12 @@ function renderUI() {
 
     const currencies = Object.keys(rates).sort();
 
-    createRoot(headerNode).render(ratesHeaderElt({base, date}));
-    createRoot(currenciesNode).render(currencyListElt({base, currencies, handleChange: (c) => {
+    createRoot(headerNode).render(RatesHeaderElt({base, date}));
+    createRoot(currenciesNode).render(CurrencyListElt({base, currencies, handleChange: (c) => {
         setDefaultCurrency(c);
         renderUI();
       }}));
-    createRoot(ratesNode).render(ratesElt({rates}));
+    createRoot(ratesNode).render(RatesElt({rates}));
   });
 
 }

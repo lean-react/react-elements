@@ -1,6 +1,6 @@
 import React from 'react';
 
-const currencyListElt = ({base, currencies, handleChange}) => React.createElement(
+const CurrencyListElt = ({base, currencies, handleChange}) => React.createElement(
   'ul',
   { className: 'w-24 text-blue-700 text-center mx-auto border-b border-blue-200'},
   currencies.map(c => {
@@ -18,4 +18,4 @@ const currencyListElt = ({base, currencies, handleChange}) => React.createElemen
   })
 );
 
-export default currencyListElt;
+export default CurrencyListElt;
