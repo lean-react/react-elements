@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://api.exchangeratesapi.io/latest';
+const baseUrl = 'https://api.exchangerate.host/latest';
 
 export async function getRates(baseCurrency) {
   try {
@@ -12,7 +12,7 @@ export async function getRates(baseCurrency) {
     }
     return { date, rates };
   } catch (e) {
-    throw Error('Problem fetching data from https://exchangeratesapi.io');
+    throw Error('Problem fetching data from https://exchangerate.host');
   }
 }
 
